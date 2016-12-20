@@ -2,7 +2,14 @@
 This is empty on purpose! Your code to build the resume will go here.
 */
 
-$("#main").append("Iain Stewart");
+// $("#main").append("Iain Stewart");
+var awesomeThoughts = "AWESOME";
+var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
+$("#main").append(funThoughts);
+
+var name = "Iain Stewart";
+var formattedName = HTMLheaderName.replace("%data%", name);
+$("#header").append(formattedName);
 
 // BIO:
     // name : string
