@@ -1,28 +1,95 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
-*/
+// var name = "Iain Stewart";
+// var formattedName = HTMLheaderName.replace("%data%", name);
 
-// $("#main").append("Iain Stewart");
-var awesomeThoughts = "AWESOME";
-var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-$("#main").append(funThoughts);
+// var role = "Junior Software Developer";
+// var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var name = "Iain Stewart";
-var formattedName = HTMLheaderName.replace("%data%", name);
-$("#header").append(formattedName);
+// $("#header").prepend(formattedRole);
+// $("#header").prepend(formattedName);
+
+var work = {
+    "jobs": [
+        {
+            "employer": "Sabio",
+            "title": "Junior Software Developer",
+            "location": "Glasgow, Scotland",
+            "datesWorked": "2016",
+            "description": "Developing telephony products using Java"
+        },
+        {
+            "employer": "EY",
+            "title": "IT Risk Consultant",
+            "location": "Glasgow, Scotland",
+            "datesWorked": "2015",
+            "description": "Advised corporate clients on IT risk"
+        }
+    ]
+}
+
+var projects = {
+    "projects": [
+        {
+            "title": "Sample project 1",
+            "dates": "Dec 16",
+            "description": "",
+            "images": ["images/project1.jpg", "images/project2.jpg"]
+        }
+    ]
+}
+
+var bio = {
+    "name": "Iain",
+    "role": "Junior Software Developer",
+    "contacts": {
+        "mobile": "07000-123456",
+        "email": "iain@gmail.com",
+        "github": "istewart13",
+        "twitter": "@iain",
+        "location": "Glasgow, Scotland"
+    },
+    "welcomeMessage": "Hey",
+    "skills": [
+        "Java", "TDD", "Data analysis"
+    ],
+    "biopic": "images/me.jpg"
+}
+
+var education = {
+    "schools": [
+        {
+            "name": "University of Glasgow",
+            "location": "Glasgow, Scotland",
+            "majors": ["Software Development"],
+            "degree dates": "2015",
+            "url": "http://www.gla.ac.uk"
+        },
+        {
+            "name": "University of Strathclyde",
+            "location": "Glasgow, Scotland",
+            "majors": ["Management Science", "Business Technology"],
+            "degree dates": "2014",
+            "url": "http://www.strath.ac.uk"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Intriduction to Programming",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+        }
+    ]
+}
+
+// var education= {};
+// education["name"] = "University of Glasgow";
+// education["years"] = "2014 - 2015";
+// education["city"] = "Glasgow, Scotland";
+// $("#main").append(education.name);
+
+
 
 // BIO:
-    // name : string
-    // role : string
-    // contacts : an object with
-    //       mobile: string
-    //       email: string 
-    //       github: string
-    //       twitter: string (optional)
-    //       location: string
-    // welcomeMessage: string 
-    // skills: array of strings
-    // biopic: url
     // display: function taking no parameters
 
 // EDUCATION:
@@ -41,17 +108,11 @@ $("#header").append(formattedName);
 //     display: function taking no parameters
 
 // WORK:
-//     jobs: array of objects with
-//          employer: string 
-//          title: string 
-//          location: string 
-//          dates: string (Can be 'in progress')
-//          description: string 
 //     display: function taking no parameters
 
 // PROJECTS:
 //     projects: array of objects with
-//           title: string 
+//           title: string
 //           dates: string (works with a hyphen between them)
 //           description: string
 //           images: array with string urls
