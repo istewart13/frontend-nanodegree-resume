@@ -81,19 +81,24 @@ var education = {
     ]
 }
 
-for (var job = 0; job < work.jobs.length; job++) {
-    $("#workExperience").append(HTMLworkStart);
+var displayWork = function() {
+    for (var job = 0; job < work.jobs.length; job++) {
+        $("#workExperience").append(HTMLworkStart);
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedJobTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedJobLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    var formattedJobDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    var formattedJobDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedJobTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedJobLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedJobDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedJobDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-    var formattedJob = formattedEmployer + formattedJobTitle + formattedJobLocation + formattedJobDates + formattedJobDescription;
+        var formattedJob = formattedEmployer + formattedJobTitle + formattedJobLocation + formattedJobDates + formattedJobDescription;
 
     $(".work-entry:last").append(formattedJob);
+    }
 }
+
+displayWork();
+
 
 // var education= {};
 // education["name"] = "University of Glasgow";
