@@ -81,7 +81,7 @@ var education = {
     ]
 }
 
-for (job in work.jobs) {
+for (var job = 0; job < work.jobs.length; job++) {
     $("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
