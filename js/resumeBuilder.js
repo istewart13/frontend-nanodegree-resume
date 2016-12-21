@@ -13,14 +13,14 @@ var work = {
             "employer": "Sabio",
             "title": "Junior Software Developer",
             "location": "Glasgow, Scotland",
-            "datesWorked": "2016",
+            "dates": "2016",
             "description": "Developing telephony products using Java"
         },
         {
             "employer": "EY",
             "title": "IT Risk Consultant",
             "location": "Glasgow, Scotland",
-            "datesWorked": "2015",
+            "dates": "2015",
             "description": "Advised corporate clients on IT risk"
         }
     ]
@@ -73,12 +73,26 @@ var education = {
     ],
     "onlineCourses": [
         {
-            "title": "Intriduction to Programming",
+            "title": "Introduction to Programming",
             "school": "Udacity",
             "dates": "2015",
             "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
         }
     ]
+}
+
+for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedJobTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedJobLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    var formattedJobDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var formattedJobDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+    var formattedJob = formattedEmployer + formattedJobTitle + formattedJobLocation + formattedJobDates + formattedJobDescription;
+
+    $(".work-entry:last").append(formattedJob);
 }
 
 // var education= {};
