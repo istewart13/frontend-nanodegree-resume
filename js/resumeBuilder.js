@@ -122,6 +122,7 @@ var displayWork = function() {
 displayWork();
 
 $("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
 
 
 /*
