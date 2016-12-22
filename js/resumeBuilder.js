@@ -1,11 +1,11 @@
-// var name = "Iain Stewart";
-// var formattedName = HTMLheaderName.replace("%data%", name);
+var name = "Iain Stewart";
+var formattedName = HTMLheaderName.replace("%data%", name);
 
-// var role = "Junior Software Developer";
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
+var role = "Junior Software Developer";
+var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 
 var work = {
     "jobs": [
@@ -98,6 +98,23 @@ var displayWork = function() {
 }
 
 displayWork();
+
+$("#main").append(internationalizeButton);
+
+
+/*
+The inName function takes in  a string of two names and returns an internationalized version
+*/
+var inName = function(nameString) {
+  var splitName = nameString.split(" ");
+  var fName = splitName[0].charAt(0).toUpperCase() + splitName[0].slice(1).toLowerCase();
+  var sName = splitName[1].toUpperCase();
+
+  return fName + " " + sName;
+}
+
+//inName("sebastian thrun");
+
 
 
 // var education= {};
