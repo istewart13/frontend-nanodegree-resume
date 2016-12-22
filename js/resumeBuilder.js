@@ -37,6 +37,28 @@ var projects = {
     ]
 }
 
+projects.display = function() {
+    for (var project = 0; project < projects.projects.length; project++) {
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedProjectTitle);
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedProjectDates);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedProjectDescription);
+        
+        if(projects.projects[project].images.length > 0) {
+            for (var i = 0; i < projects.projects[project].images.length; i++) {
+                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+                $(".project-entry:last").append(formattedProjectImage);
+            }
+        }
+    }
+}
+
+projects.display();
+
 var bio = {
     "name": "Iain",
     "role": "Junior Software Developer",
@@ -106,7 +128,7 @@ $("#main").append(internationalizeButton);
 The inName function takes in  a string of two names and returns an internationalized version
 */
 var inName = function(nameString) {
-  var splitName = nameString.split(" ");
+  var splitName = nameString.trim().split(" ");
   var fName = splitName[0].charAt(0).toUpperCase() + splitName[0].slice(1).toLowerCase();
   var sName = splitName[1].toUpperCase();
 
